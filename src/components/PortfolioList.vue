@@ -11,18 +11,7 @@
       <div class="row">
 
         <div class="col-md-4 col-sm-6 portfolio-item" v-for="(obj, key) in portfolioJson" :key="key">
-          <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-            <div class="portfolio-hover">
-              <div class="portfolio-hover-content">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" :src="obj.img" alt="">
-          </a>
-          <div class="portfolio-caption">
-            <h4>{{obj.caption}}</h4>
-            <p class="text-muted">{{obj.title}}</p>
-          </div>
+          <ProjectCard  :imgname="obj.img" :caption="obj.caption" :title="obj.title"></ProjectCard>
         </div>
       </div>
 
@@ -69,8 +58,15 @@
 </template>
 
 <script>
+
+import ProjectCard from './ProjectCard'
+
 export default {
    
+components :{
+   ProjectCard
+  },
+
    data: ()=> ({
         portfolioJson : [{
             img : "https://res.cloudinary.com/ekgaliana/image/upload/v1579988564/portfolioVue/01-thumbnail_qqgisk.jpg",
