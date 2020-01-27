@@ -11,13 +11,14 @@
           <div class="portfolio-caption">
             <h4>{{caption}}</h4>
             <p class="text-muted">{{title}}</p>
+            <a :href="link" target="_blank">Go to project</a>
           </div>
      </div>
 </template>
 
 <script>
 export default {
-    props: ['img','caption','title']
+    props: ['img','caption','title','link']
 }
 
 </script>
